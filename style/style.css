@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
 * {
 	margin: 0px;
@@ -56,14 +57,38 @@ a {
 	display: none;
 }
 
+#day_signal {
+	position: absolute;
+	display: inline;
+	top: 55%;
+	left: 50%;
+	width: 80%;
+	transform: translate(-50%, -50%);
+	color: #FFFFFF;
+	font-size: 6vw;
+    font-weight: bold;
+    text-align: center;
+    font-weight: normal;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.day_signal_num {
+	display: inline;
+    word-break : nowrap;
+	color: #FFFFFF;
+	font-size: 8vw;
+    white-space: nowrap;
+	text-shadow: -1px 0 4px rgb(240, 69, 17), 0 1px 4px rgb(240, 69, 17), 1px 0 4px  rgb(240, 69, 17), 0 -1px 4px rgb(240, 69, 17);
+}
+
 /* 사람 */
 .man_load {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	min-width: 20%;
+	min-width: 40%;
 	min-height: 100%;
 	transform: translate(-50%, -50%);
+	z-index: 99;
 }
 
 .man {
@@ -71,12 +96,11 @@ a {
 	left: calc(50% - 80px);
 	top: 20%;
 	text-align: center;
-	animation: man_ani 4s infinite linear;
+	animation: man_ani 3s infinite ease;
 }
 
-.man_1 img:hover {
-	transform: scale(1.2);
-	transition: .5s;
+.man_1 {
+	z-index: 999;
 }
 
 .man_2 {
@@ -85,26 +109,34 @@ a {
 	animation-delay: -1s;
 }
 
-.man_2::before {
-	content: "";
-	position: absolute;
-	right: 0;
-	top: 0px;
-	width: 15px;
-	height: 15px;
-	font-size: 20px;
-	color: antiquewhite;
-	background: red;
-	border-radius: 50%;
-	z-index: -1;
-}
-
 .man_3 {
-	left: -50%;
+	left: -10%;
 	top: 15%;
-	animation-delay: -3s;
+	animation-delay: -2s;
 }
 
+.man_4 {
+	left: -10%;
+	top: 80%;
+}
+
+.man_5 {
+	left: 100%;
+	top: 70%;
+}
+
+
+.man_talk {
+	display: none;
+	position: absolute;
+	right: -100px;
+	top: 0;
+	width: 100px;
+}
+
+.man_talk > img {
+	width: 100%;
+}
 
 .man_name {
 	display: block;
@@ -113,72 +145,68 @@ a {
 	padding-bottom: 4px;
 }
 
-.man_img > img {
+.man_img {
 	position: relative;
+	width: 60px;
 	display: inline-block;
-	width: 80px;
-	height: 80px;
-	border-radius: 20%;
-	/* background: aquamarine; */
-	/* border: 5px solid snow; */
+	text-align: center;
 }
 
-.man_1 > .man_img > img {
+.man_img > img {
 	position: relative;
-	display: inline-block;
-	width: 160px;
-	height: 160px;
+	max-width: 100%;
+	height: auto;
 	border-radius: 20%;
-	/* background: aquamarine; */
-	/* border: 5px solid snow; */
+}
+
+.man_1 > .man_img  {
+	width: 120px;
+}
+.man_4 > .man_img  {
+	width: 20px;
+}
+.man_5 > .man_img  {
+	width: 30px;
 }
 
 .blurEffect {
-	filter: blur(10px);
-	-webkit-filter: blur(10px);
-  }
+	filter: blur(20px);
+	-webkit-filter: blur(20px);
+}
 
 .man_days {
 	display: block;
+	font-size: 24px;
 	color: navajowhite;
 	font-weight: bold;
 	padding-top: 5px;
 }
 
+.man_2 > .man_days,
+.man_3 > .man_days {
+	font-size: 16px;
+}
+
+.man_4 > .man_days,
+.man_5 > .man_days {
+	font-size: 12px;
+	color: red;
+}
+
 @keyframes man_ani {
-	0% {transform: rotate(0deg);}
-	25% {transform: rotate(-10deg);}
-	50% {transform: rotate(0deg);}
-	75% {transform: rotate(10deg);}
-	100% {transform: rotate(0deg);}
+	0% {transform: translateY(0);}
+	40% {transform: translateY(-10px);}
+	50% {transform: translateY(0);}
+	75% {transform: translateY(10px);}
+	100% {transform: translateY(0);}
 }
-
-
-/*
-.man > div::before {
-	content: "inshin";
-	font-size: 20px;
-	color: aquamarine
-	position: absolute;
-	top : -25px;
-	left: -10px;
-}
-
-.man > div::after {
-	content: "81days";
-	position: absolute;
-	top : 30px;
-	left: -14px;
-	color: navajowhite;
-	font-weight: bold;
-}
-*/
 
 /* 블랙홀 */
 .blackhole {
 	width: 50%;
 	height: 45%;
-	min-width: 500px;
+	max-width: 600px;
+	min-width: 350px;
 	position: absolute;
 	bottom: 0px;
 	left: 50%;
@@ -187,7 +215,7 @@ a {
 }
 
 .blackhole #Layer_1 {
-	min-width: 500px;
+	min-width: 350px;
 	min-height: 500px;
 	animation: bkhole_ani 60s infinite linear
 }
