@@ -86,7 +86,7 @@ function start() {
             {
                 speed: 0.5,
                 scale: 0.2,
-                count: 60
+                count: 30
             }
         ],
 

@@ -10,22 +10,31 @@
 
 <body>
 	<div id="wrap">
-		<div class="title">Who's The NEXT?</div>
-		<div class="man_load">
-			<div class="man man_1">
-				<div class="man_days">42days</div>
-				<div class="man_img"><img src="img/1.png" alt="man_img" title="inshin"></div>
-				<div class="man_name">inshin</div>
+		<div class="modal">
+			<div class="text_box">
+				<div class="title">Who's The NEXT?</div>
+				<input type="text" id="name" name="name">
+				<input type="submit" name="" id="">
 			</div>
-			<div class="man man_2">
-				<div class="man_days">40days</div>
-				<div class="man_img"><img src="img/4.png" alt="man_img" title=""></div>
-				<div class="man_name">kyukim</div>
-			</div>
-			<div class="man man_3">
-				<div class="man_days">56days</div>
-				<div class="man_img"><img src="img/5.png" alt="man_img" title=""></div>
-				<div class="man_name">yuchoi</div>
+		</div>
+		<div class="main">
+			<div class="man_load">
+				<div class="man man_1">
+					<div class="man_days">42days</div>
+					<div class="man_img"><img src="img/1.png" alt="man_img" title="inshin"></div>
+					<div class="man_name">inshin</div>
+				</div>
+				<div class="man man_2">
+					<div class="man_days">40days</div>
+					<div class="man_img"><img src="img/4.png" alt="man_img" title=""></div>
+					<div class="man_name">kyukim</div>
+				</div>
+				<div class="man man_3">
+					<div class="man_days">56days</div>
+					<div class="man_img"><img src="img/5.png" alt="man_img" title=""></div>
+					<div class="man_name">yuchoi</div>
+				</div>
+				<iframe id="frame1" src="https://badge42.herokuapp.com/api/stats/inshin" frameborder="0"></iframe>
 			</div>
 		</div>
 		<div class="blackhole">
@@ -163,66 +172,6 @@
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="js/script_star.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
-	<script>
-		$.ajax({
-				method: "POST",
-				url: "https://api.intra.42.fr/oauth/token",
-				data: {
-					UID: "cfc60601954728d69cdc4121131c3925df7d1d1eeb1f14d0bf73f71ccb0ddb62",
-					SECRET: "bf91bac98f7b48a4c77b3b8c6f305036bf70aa83b1b7b6d747b8e59c964cc07d"
-				}
-			})
-			.done(function (msg) {
-				alert("Data Saved: " + msg);
-			});
-
-		function AjaxClass() {}
-		AjaxClass.prototype.getApiWithToken = function (token) {
-			var url = "https://api.intra.42.fr/v2/me";
-			var oReq = new XMLHttpRequest;
-
-			oReq.open('GET', url);
-			oReq.setRequestHeader("Authorization", "Bearer " + token);
-			oReq.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-			oReq.responseType = "text";
-			console.log(token);
-			oReq.addEventListener('load', function () {
-				console.log(JSON.parse(this.responseText));
-			});
-			oReq.send();
-
-		}
-		document.addEventListener("DOMContentLoaded", function () {
-
-			var inputGrantType = "client_credentials";
-			var inputClientId = "cfc60601954728d69cdc4121131c3925df7d1d1eeb1f14d0bf73f71ccb0ddb62";
-			var inputClientSecret = "bf91bac98f7b48a4c77b3b8c6f305036bf70aa83b1b7b6d747b8e59c964cc07d";
-			var inputCode = "${requestScope.code}";
-			var inputRedirectURI = "https://42inshin.github.io/whos_the_next/index.html";
-
-			var oReq = new XMLHttpRequest;
-			var queryString = "";
-			queryString += "" +
-				"grant_type=" + "authorization_code" + "&" +
-				"client_id=" + inputClientId.value + "&" +
-				"client_secret=" + inputClientSecret.value + "&" +
-				"code=" + inputCode.value + "&" +
-				"redirect_uri=" + inputRedirectURI.value + "&" +
-				"scope=public";
-			oReq.open('POST', "https://api.intra.42.fr/oauth/token");
-			oReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-			oReq.setRequestHeader("X-Mobile", "false");
-			oReq.responseType = "text";
-			oReq.addEventListener('load', function () {
-				var json = JSON.parse(this.responseText);
-				var tokenFromAPI = json.access_token;
-				var getApiAjaxObj = new AjaxClass();
-				getApiAjaxObj.getApiWithToken(tokenFromAPI);
-				console.log(json);
-			});
-			oReq.send(queryString);
-		})
-	</script>
 </body>
 
 </html>
