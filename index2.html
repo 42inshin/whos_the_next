@@ -17,15 +17,15 @@
 			value="client_credentials">
 
         <input name="client_id" placeholder="client_id"
-			value="27ef6c6257d555818826985f9a1f85c85bf81ffe9d61780d4d6278cf845cddba">
+			value="2667cad600982b7d2c86b83a64e129af90997bcb87b61743865cc9039f554175">
 
 		<input name="client_secret" placeholder="client_secret"
-			value="068abc288188c153dd4eb402d7e2556e4d2bf804515584e81a5efa8c151b90f2">
+			value="2dcd42025775388b79234ff9bec772fe9c600bb83954767d9c3955cc184acabf">
 
 		<input name="code" placeholder="code" value="${requestScope.code}">
 
 		<input name="redirect_uri" placeholder="redirect_uri"
-			value="http://localhost:8080/ftYoutube/getTokenPage">
+			value="http://localhost:5501/index.html">
 
 		<button type="submit">button</button>
 	</form>
@@ -86,8 +86,6 @@ AjaxClass.prototype.getApiWithToken = function(token) {
 		});
 		oReq.send(queryString);
 	})
-
-
 </script>
 
 </html>
