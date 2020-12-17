@@ -175,6 +175,53 @@
 			.done(function (msg) {
 				alert("Data Saved: " + msg);
 			});
+
+		function AjaxClass() {}
+		AjaxClass.prototype.getApiWithToken = function (token) {
+			var url = "https://api.intra.42.fr/v2/me";
+			var oReq = new XMLHttpRequest;
+
+			oReq.open('GET', url);
+			oReq.setRequestHeader("Authorization", "Bearer " + token);
+			oReq.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+			oReq.responseType = "text";
+			console.log(token);
+			oReq.addEventListener('load', function () {
+				console.log(JSON.parse(this.responseText));
+			});
+			oReq.send();
+
+		}
+		document.addEventListener("DOMContentLoaded", function () {
+
+			var inputGrantType = "client_credentials";
+			var inputClientId = "cfc60601954728d69cdc4121131c3925df7d1d1eeb1f14d0bf73f71ccb0ddb62";
+			var inputClientSecret = "bf91bac98f7b48a4c77b3b8c6f305036bf70aa83b1b7b6d747b8e59c964cc07d";
+			var inputCode = "${requestScope.code}";
+			var inputRedirectURI = "https://42inshin.github.io/whos_the_next/index.html";
+
+			var oReq = new XMLHttpRequest;
+			var queryString = "";
+			queryString += "" +
+				"grant_type=" + "authorization_code" + "&" +
+				"client_id=" + inputClientId.value + "&" +
+				"client_secret=" + inputClientSecret.value + "&" +
+				"code=" + inputCode.value + "&" +
+				"redirect_uri=" + inputRedirectURI.value + "&" +
+				"scope=public";
+			oReq.open('POST', "https://api.intra.42.fr/oauth/token");
+			oReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			oReq.setRequestHeader("X-Mobile", "false");
+			oReq.responseType = "text";
+			oReq.addEventListener('load', function () {
+				var json = JSON.parse(this.responseText);
+				var tokenFromAPI = json.access_token;
+				var getApiAjaxObj = new AjaxClass();
+				getApiAjaxObj.getApiWithToken(tokenFromAPI);
+				console.log(json);
+			});
+			oReq.send(queryString);
+		})
 	</script>
 </body>
 
