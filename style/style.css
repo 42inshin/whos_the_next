@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
 
 * {
 	margin: 0px;
@@ -43,12 +44,12 @@ a {
 	color: #333333;
 	font-size: 5vh;
 	font-weight: bold;
+	font-family: 'Bungee Outline', cursive;
 }
 .text_box input {
 	width: 300px;
 	height: 50px;
 	margin-top: 10px;
-
 }
 
 .main {
@@ -82,6 +83,20 @@ a {
 	left: 100%;
 	top: 28%;
 	animation-delay: -1s;
+}
+
+.man_2::before {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0px;
+	width: 15px;
+	height: 15px;
+	font-size: 20px;
+	color: antiquewhite;
+	background: red;
+	border-radius: 50%;
+	z-index: -1;
 }
 
 .man_3 {
@@ -171,7 +186,7 @@ a {
 	transform-origin: 50% 47%;
 }
 
-#Layer_1 {
+.blackhole #Layer_1 {
 	min-width: 500px;
 	min-height: 500px;
 	animation: bkhole_ani 60s infinite linear
