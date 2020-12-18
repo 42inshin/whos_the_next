@@ -242,7 +242,11 @@ html, body {
 	z-index: 99999;
 }
 
-.blackhole #Layer_1 {
+.Layer_1 {
+	animation: bkhole_ani 10s infinite linear;
+}
+
+.blackhole .Layer_1 {
 	min-width: 350px;
 	min-height: 500px;
 	animation: bkhole_ani 60s infinite linear;
