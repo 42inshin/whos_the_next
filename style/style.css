@@ -61,6 +61,32 @@ html, body {
 .main {
 	display: none;
 	user-select: none;
+	width: 100%;
+	height: 100%;
+}
+
+.grey_bar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 30px;
+	z-index: 999999;
+	background-color: #333333;
+	overflow: hidden;
+}
+
+.green_bar {
+	position: relative;
+	border-radius: 0 15px 15px 0;
+	background-color:#32BEA6;;
+	color: #ffffff;
+	width: 0%;
+	height: 100%;
+	text-indent: 20px;
+	height: 100%;
+	line-height: 30px;
+	font-size: 20px;
 }
 
 .inner_text_box {

@@ -17,6 +17,7 @@ $(document).ready(function(){
 		});
 		$("canvas").show();
 		$(".main").show(1500);
+		move();
 	});
 	$(".man").click(function(){
 		$(this).find(".man_talk").toggle();
@@ -24,4 +25,19 @@ $(document).ready(function(){
 	$('.reload_button').click(function() {
 		location.reload();
 		});
+
+	function move() {
+		var elem = document.getElementById("myBar");
+		var width = 0;
+		var id = setInterval(frame, 30);
+		function frame() {
+			if (width >= 42) {
+			clearInterval(id);
+			} else {
+			width++;
+			elem.style.width = width + '%';
+			elem.innerHTML = width * 1 + ' days left';
+			}
+		}
+		}
 });
