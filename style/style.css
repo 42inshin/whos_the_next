@@ -30,6 +30,7 @@ a {
 	height: 100%;
 	background-color: #ededed;
 	z-index: 9999;
+	user-select: none;
 }
 /* 텍스트 박스 */
 .text_box {
@@ -55,15 +56,23 @@ a {
 
 .main {
 	display: none;
+	user-select: none;
 }
 
-#day_signal {
+.inner_text_box {
 	position: absolute;
-	display: inline;
 	top: 55%;
 	left: 50%;
 	width: 80%;
 	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: 9999;
+}
+
+#day_signal {
+	position: relative;
+	display: inline;
+	width: 100%;
 	color: #FFFFFF;
 	font-size: 6vw;
     font-weight: bold;
@@ -72,6 +81,7 @@ a {
     font-family: 'Noto Sans KR', sans-serif;
 }
 .day_signal_num {
+	position: relative;
 	display: inline;
     word-break : nowrap;
 	color: #FFFFFF;
@@ -79,6 +89,17 @@ a {
     white-space: nowrap;
 	text-shadow: -1px 0 4px rgb(240, 69, 17), 0 1px 4px rgb(240, 69, 17), 1px 0 4px  rgb(240, 69, 17), 0 -1px 4px rgb(240, 69, 17);
 }
+
+.reload_button {
+	position: relative;
+	display: inline-block;
+	width: 100px;
+}
+
+.reload_button > svg {
+	cursor: pointer;
+}
+
 
 /* 사람 */
 .man_load {
@@ -222,7 +243,8 @@ a {
 .blackhole #Layer_1 {
 	min-width: 350px;
 	min-height: 500px;
-	animation: bkhole_ani 60s infinite linear
+	animation: bkhole_ani 60s infinite linear;
+	cursor: pointer;
 }
 
 @keyframes bkhole_ani {
@@ -243,11 +265,3 @@ canvas {
 	background: linear-gradient(#000200, #000104);
 	z-index: -1;
   }
-
-.bg {
-	display: none;
-	width: 100%;
-	height: 100%;
-	background-color: #333333;
-	/* background: radial-gradient(circle, rgb(3, 0, 48) 0%, rgba(52, 4, 74, 0.208) 31%, rgba(29, 18, 222, 0.767) 100%); */
-}

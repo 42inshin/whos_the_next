@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 	// 첫화면
 	$(".blackhole").click(function(){
-		$(".modal").slideUp();
+		$(".modal").slideUp('slow');
 		$(this).css({
             "transform": "translate(-50%, 50%)",
             "transition": "1s"
@@ -20,4 +20,7 @@ $(document).ready(function(){
 	$(".man").click(function(){
 		$(this).find(".man_talk").toggle();
 	});
+	$('.reload_button').click(function() {
+		location.reload();
+		});
 });
