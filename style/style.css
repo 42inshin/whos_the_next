@@ -16,19 +16,23 @@ a {
 	color : #333333;
 	text-decoration: none;
 }
+html, body {
+	width: 100%;
+	height: 100%;
+}
 
 #wrap {
 	position: relative;
 	width: 100vw;
-	height: 100vh;
-	filter: contrast(1.2);
+	height: 100%;
 	overflow: hidden;
 }
 
 .modal {
+	position: relative;
 	width: 100%;
 	height: 100%;
-	background-color: #ededed;
+	background-color: #f5f5ec;
 	z-index: 9999;
 	user-select: none;
 }
@@ -71,10 +75,10 @@ a {
 
 #day_signal {
 	position: relative;
-	display: inline;
+	display: inline-block;
 	width: 100%;
 	color: #FFFFFF;
-	font-size: 6vw;
+	font-size: 4vw;
     font-weight: bold;
     text-align: center;
     font-weight: normal;
@@ -82,10 +86,10 @@ a {
 }
 .day_signal_num {
 	position: relative;
-	display: inline;
+	display: inline-block;
     word-break : nowrap;
 	color: #FFFFFF;
-	font-size: 8vw;
+	font-size: 7vw;
     white-space: nowrap;
 	text-shadow: -1px 0 4px rgb(240, 69, 17), 0 1px 4px rgb(240, 69, 17), 1px 0 4px  rgb(240, 69, 17), 0 -1px 4px rgb(240, 69, 17);
 }
@@ -93,7 +97,8 @@ a {
 .reload_button {
 	position: relative;
 	display: inline-block;
-	width: 100px;
+	margin-top: 10px;
+	width: 70px;
 }
 
 .reload_button > svg {
@@ -115,19 +120,25 @@ a {
 .man {
 	cursor: pointer;
 	position: absolute;
-	left: calc(50% - 80px);
-	top: 20%;
+	top: 15%;
 	text-align: center;
-	animation: man_ani 3s infinite ease;
+	animation: man_ani 5s 1s infinite ease;
+}
+
+@keyframes man_ani {
+	0% {transform: translateY(0);}
+	75% {transform: translateY(15px);}
+	100% {transform: translateY(0);}
 }
 
 .man_1 {
 	z-index: 999;
+	left: calc(50% - 50px);
 }
 
 .man_2 {
 	left: 100%;
-	top: 28%;
+	top: 25%;
 	animation-delay: -1s;
 }
 
@@ -140,11 +151,13 @@ a {
 .man_4 {
 	left: -10%;
 	top: 80%;
+	animation-delay: -4s;
 }
 
 .man_5 {
 	left: 100%;
 	top: 70%;
+	animation-delay: .5s;
 }
 
 
@@ -182,7 +195,7 @@ a {
 }
 
 .man_1 > .man_img  {
-	width: 120px;
+	width: 100px;
 }
 .man_4 > .man_img  {
 	width: 20px;
@@ -191,10 +204,6 @@ a {
 	width: 30px;
 }
 
-.blurEffect {
-	filter: blur(20px);
-	-webkit-filter: blur(20px);
-}
 
 .man_days {
 	display: block;
@@ -219,14 +228,6 @@ a {
 	color: red;
 }
 
-@keyframes man_ani {
-	0% {transform: translateY(0);}
-	40% {transform: translateY(-10px);}
-	50% {transform: translateY(0);}
-	75% {transform: translateY(10px);}
-	100% {transform: translateY(0);}
-}
-
 /* 블랙홀 */
 .blackhole {
 	width: 50%;
@@ -238,6 +239,7 @@ a {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	transform-origin: 50% 47%;
+	z-index: 99999;
 }
 
 .blackhole #Layer_1 {
@@ -253,6 +255,10 @@ a {
 	100% {transform: rotate(360deg);}
 }
 
+.blurEffect {
+	filter: blur(30px) contrast(1) drop-shadow(16px 16px 20px rgb(255, 255, 255));
+	-webkit-filter: blur(30px) contrast(1) drop-shadow(16px 16px 20px rgb(255, 255, 255));
+}
 
 /* 배경 */
 canvas {

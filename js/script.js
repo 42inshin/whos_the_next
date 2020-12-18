@@ -7,8 +7,9 @@ $(document).ready(function(){
 	$(".blackhole").click(function(){
 		$(".modal").slideUp('slow');
 		$(this).css({
-            "transform": "translate(-50%, 50%)",
-            "transition": "1s"
+            "transform": "translate(-50%, 40%)",
+			"transition": ".8s",
+			"z-index": "1"
 		})
 		$(this).addClass("blurEffect")
 		$("#Layer_1").css({
