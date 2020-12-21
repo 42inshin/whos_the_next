@@ -11,8 +11,9 @@
 - web 기반 어플리케이션
 
 ## app
-https://42inshin.github.io/whos_the_next/
-<iframe src="https://42inshin.github.io/whos_the_next/" frameborder="0"></iframe>
+
+[![첫화면](/img/sample1.png)](https://42inshin.github.io/whos_the_next/)
+[![메인화면](/img/sample2.png)](https://42inshin.github.io/whos_the_next/)
 
 
 ## 사용 언어
@@ -25,5 +26,4 @@ https://42inshin.github.io/whos_the_next/
 - api 연동
 - 프론트엔트 코드 개선
 - 비동기 방식
-
->
+- 얼굴 인식
