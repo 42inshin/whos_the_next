@@ -11,8 +11,7 @@
 - web 기반 어플리케이션
 
 ## app
-https://42inshin.github.io/whos_the_next/
-<iframe src="https://42inshin.github.io/whos_the_next/" frameborder="0"></iframe>
+주소 : https://42inshin.github.io/whos_the_next/
 
 
 ## 사용 언어
