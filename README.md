@@ -19,10 +19,10 @@
 - 오늘도 블랙홀에 멀어지도록 노력해보세요 ;)
 
 ### 시작화면
-[![첫화면](/img/sample1.png)](https://42inshin.github.io/whos_the_next/)
+[![시작화면](/img/sample1.png =450x)](https://42inshin.github.io/whos_the_next/)
 
 ### 메인화면
-[![메인화면](/img/sample2.png)](https://42inshin.github.io/whos_the_next/)
+[![메인화면](/img/sample2.png =450x)](https://42inshin.github.io/whos_the_next/)
 
 
 ## 사용 언어
